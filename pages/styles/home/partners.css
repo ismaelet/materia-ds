@@ -1,0 +1,57 @@
+/*
+* Layout
+*/
+.partners {
+	padding-block: 7rem;
+}
+
+.partners-title {
+	font-size: min(5rem, 11vw);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+}
+
+.partners-list {
+	display: flex;
+	margin-top: 7rem;
+	justify-content: center;
+}
+
+.partner {
+	border: 1px solid #aaa;
+	border-width: 0 0 0 1px;
+	width: 28rem;
+	padding-inline: min(6rem, 7vw);
+}
+
+.partner:first-child {
+	border: none;
+}
+
+.parter-img {
+	aspect-ratio: 4;
+}
+
+/*
+* Responsive
+*/
+@media (max-width: 480px) {
+	.partners-list {
+		display: grid;
+		justify-items: center;
+	}
+
+	.partner {
+		width: 90%;
+		padding: 4rem 0 0 0;
+		margin-top: 4rem;
+		border-width: 1px 0 0 0;
+	}
+
+	.partner:first-child {
+		padding: 0;
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,16 @@
+/*
+* Layout
+*/
+.introduction {
+	background-color: #161616;
+	padding-block: 4rem;
+}
+
+.introduction p {
+	max-width: 800px;
+	margin-inline: auto;
+	text-align: center;
+	color: #eee;
+	font-size: min(1.3rem, 4vw);
+	letter-spacing: 0.1em;
+}

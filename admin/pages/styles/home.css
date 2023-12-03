@@ -1,0 +1,62 @@
+/*
+* Panels
+*/
+#grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+}
+
+.panel {
+	display: grid;
+	row-gap: 1.5rem;
+	align-items: start;
+}
+
+.panel-header {
+	display: flex;
+	margin-bottom: 1rem;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem;
+}
+
+.panel-icon {
+	width: 1.6rem;
+}
+
+.panel .title {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.panel .footer {
+	display: grid;
+	height: 100%;
+	row-gap: 0.5rem;
+	align-items: flex-end;
+}
+
+/* Buttons */
+.panel .pbtn,
+.panel .sbtn {
+	font-size: 0.875rem;
+	text-transform: none;
+}
+
+.panel .pbtn {
+	width: 100%;
+}
+
+.panel .sbtn {
+	width: 100%;
+	border-style: dashed;
+}
+
+/*
+* Responsive
+*/
+@media (max-width: 480px) {
+	#grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

@@ -1,0 +1,303 @@
+/* Structure */
+header {
+	background-color: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(10px);
+}
+
+header.dark {
+	--text-c: #ccc;
+}
+
+.texts,
+.title,
+.desc,
+.feature-btn {
+	position: relative;
+}
+
+/* Slider */
+#slider {
+	background-color: #000;
+	height: 40rem;
+}
+
+#slider .background {
+	opacity: 0.6;
+}
+
+#slider .title {
+	font-size: min(5rem, 10vw);
+}
+
+/* Features */
+#features {
+	display: grid;
+	padding-top: 7rem;
+	padding-bottom: 7rem;
+	row-gap: 10rem;
+}
+
+.feature .background {
+	background-color: #303030;
+}
+
+.feature .image-box {
+	position: relative;
+	z-index: 1;
+}
+
+.feature .img-desc {
+	position: absolute;
+	margin-top: 0.5rem;
+	letter-spacing: 0.1em;
+}
+
+.feature .title {
+	margin-bottom: 2rem;
+	font-size: min(3.5rem, 10vw);
+	font-weight: 600;
+	line-height: 1;
+	text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+.feature .desc {
+	margin-bottom: 3rem;
+	font-size: 1.1rem;
+	line-height: 2;
+}
+
+.feature-btn {
+	display: inline-block;
+}
+
+.feature-btn-txt {
+	display: inline-block;
+	font-size: 1.1rem;
+	vertical-align: middle;
+	letter-spacing: 0.05em;
+}
+
+.feature-btn-icon {
+	display: inline-grid;
+	border: 1px solid var(--c3);
+	border-radius: 100%;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-left: 10px;
+	vertical-align: middle;
+	transition: transform 0.3s, border 0.3s;
+}
+
+.feature-btn-icon .icon {
+	width: 35%;
+	height: 35%;
+}
+
+.feature-btn:hover .feature-btn-icon {
+	border-color: var(--c1);
+	transform: translateX(0.5rem);
+}
+
+.feature .image,
+.feature .video {
+	background-color: #444;
+	background-position: center;
+	background-size: cover;
+	box-shadow: 20px 40px 40px -30px rgba(0, 0, 0, 0.7);
+}
+
+.feature .video {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}
+
+/* Feature 1 */
+#feature1 .content {
+	grid-template-columns: minmax(0, 4fr) minmax(0, 3fr);
+	gap: 3rem;
+	position: relative;
+}
+
+#feature1 .background {
+	width: 70%;
+	height: 130%;
+	top: -15%;
+	left: 20%;
+}
+
+#feature1 .image {
+	min-height: 35rem;
+}
+
+#feature1 .img-desc {
+	right: 0;
+}
+
+#feature1 .texts {
+	display: grid;
+	align-content: center;
+	position: relative;
+}
+
+/* Feature 2 */
+#feature2 .content {
+	display: grid;
+	grid-template-columns: minmax(0, 4fr) 5fr;
+	align-items: center;
+	gap: 3rem;
+}
+
+#feature2 .background {
+	width: 50vw;
+	height: 150%;
+	top: -25%;
+	left: auto;
+	right: 50%;
+}
+
+#feature2 .texts {
+	position: relative;
+	z-index: 1;
+}
+
+#feature2 .image {
+	height: 50rem;
+}
+
+/* Feature 3 */
+#feature3 .background {
+	height: calc(100% - 3rem);
+	width: 70%;
+	top: auto;
+	bottom: 0;
+	right: 0;
+	left: auto;
+}
+
+#feature3 .title {
+	margin-bottom: -0.05em;
+	z-index: 1;
+}
+
+#feature3 .image {
+	height: 30rem;
+}
+
+#feature3 .img-desc {
+}
+
+#feature3 .desc {
+	color: #a2a2a6;
+}
+
+#feature3 .texts {
+	width: 60%;
+}
+
+#feature3 .image {
+	background-color: #303030;
+}
+
+/* Feature 4 */
+#feature4 {
+	position: relative;
+}
+
+#feature4 .background {
+	height: 30%;
+	top: auto;
+	bottom: 10%;
+}
+
+#feature4 .content {
+	display: grid;
+	grid-template-columns: auto 500px;
+	gap: 3rem;
+}
+
+#feature4 .image {
+	height: 34rem;
+}
+
+#feature4 .img-desc {
+	right: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	.feature .img-desc {
+		position: relative;
+		font-size: 0.625rem;
+	}
+
+	#features {
+		grid-row-gap: 6rem;
+	}
+
+	#features .feature .content {
+		grid-template-columns: 1fr;
+	}
+
+	#feature1 .background {
+		width: 120%;
+		height: 30%;
+		top: -5%;
+		left: -10%;
+	}
+
+	#feature1 .image {
+		min-height: 0;
+		padding-bottom: min(70%, 30rem);
+	}
+
+	#feature2 .background {
+		width: 120%;
+		height: 100%;
+		top: -60%;
+		right: -10%;
+	}
+
+	#feature2 .image {
+		height: 0;
+		padding-bottom: min(80%, 35rem);
+	}
+
+	#feature2 .texts {
+		grid-row: 2;
+	}
+
+	#feature3 .background {
+		width: 50%;
+		height: 70%;
+	}
+
+	#feature4 .background {
+		top: 33%;
+		bottom: initial;
+	}
+
+	#feature4 .image {
+		height: 0;
+		padding-bottom: min(60%, 25rem);
+	}
+
+	#features {
+		padding-bottom: 4rem;
+	}
+}
+
+@media (max-width: 768px) {
+	#slider h1 {
+		text-align: center;
+	}
+
+	#feature3 .title {
+		text-align: center;
+		padding-left: 0;
+	}
+
+	#feature3 .texts {
+		width: auto;
+	}
+}

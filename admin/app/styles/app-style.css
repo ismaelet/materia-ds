@@ -1,0 +1,217 @@
+/*
+* Imports
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
+
+/*
+* Google icons
+*/
+@font-face {
+	src: url(https://fonts.gstatic.com/s/materialicons/v129/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+}
+
+.material-icon {
+	display: inline-block;
+	width: var(--_size, 24px);
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: var(--_size, 24px);
+	letter-spacing: normal;
+	white-space: nowrap;
+	word-wrap: normal;
+	line-height: 1;
+	text-transform: none;
+}
+
+/*
+* Root
+*/
+:root {
+	/* Fonts */
+	--font-main: 'Poppins', sans-serif;
+	--font-text: 'Poppins', sans-serif;
+
+	/* Wraps */
+	--wrap-width: 1200px;
+	--wrap-padding: 2rem;
+
+	/* form */
+	--inp-height: 3rem;
+
+	/* animations */
+	--slide-in-intensity: 1rem;
+}
+
+/* Themes */
+html[data-theme='light'] {
+	/* theme color */
+	--theme-h: 34;
+	--theme-s: 88%;
+
+	--bgr-h: var(--theme-h);
+	--bgr-s: var(--theme-s);
+	--bgr-l: 100%;
+
+	--theme-max: #000;
+	--theme-min: #fff;
+
+	/* surfaces */
+	--bgr: hsl(var(--bgr-h), var(--bgr-s), var(--bgr-l));
+
+	--surface: hsl(var(--theme-h), 0%, 95%);
+	--surface-fade: hsl(var(--theme-h), 0%, 97%);
+	--surface-strong: hsl(var(--theme-h), 0%, 90%);
+
+	--surface-secondary: hsl(var(--theme-h), var(--theme-s), 95%);
+	--surface-tertiary: hsl(var(--theme-h), var(--theme-s), 80%);
+
+	/* shadows */
+	--shadow: rgba(0, 0, 0, 0.1);
+
+	/* borders */
+	--border-color-fade: hsl(var(--theme-h), 0%, 85%);
+	--border-color: #ebebeb;
+	--border-color-strong: #dadada;
+
+	--border-radius: 0.5rem;
+
+	/* text colors */
+	--text-color-fade: #707070;
+	--text-color: #505050;
+	--text-color-strong: #202020;
+
+	/* accent colors */
+	--clr-1: #ff9600;
+	--clr-1-strong: #f36500;
+	--clr-2: hsl(var(--theme-h), var(--theme-s), 70%);
+}
+
+html[data-theme='dark'] {
+	/* theme color */
+	--theme-h: 216;
+	--theme-s: 40%;
+
+	--bgr-h: var(--theme-h);
+	--bgr-s: var(--theme-s);
+	--bgr-l: 9%;
+
+	--theme-max: #fff;
+	--theme-min: #000;
+
+	/*
+	* Surfaces
+	*	- surface -> shades lighter than bgr
+	*	- surface secondary -> shades darker than bgr
+	*	- surface tertiary -> shades with color
+	*/
+	--bgr: hsl(var(--bgr-h), var(--bgr-s), var(--bgr-l));
+	--surface: hsl(var(--theme-h), calc(var(--theme-s) * 0.8), calc(var(--bgr-l) + 4%));
+	--surface-fade: hsl(var(--theme-h), calc(var(--theme-s) * 0.9), calc(var(--bgr-l) + 2%));
+	--surface-strong: hsl(var(--theme-h), calc(var(--theme-s) * 0.7), calc(var(--bgr-l) + 7%));
+	--surface-very-strong: hsl(var(--theme-h), calc(var(--theme-s) * 0.7), calc(var(--bgr-l) + 11%));
+	/*--surface-secondary: hsl(var(--theme-h), var(--theme-s), 15%);
+	--surface-secondary-strong: hsl(var(--theme-h), var(--theme-s), 25%);
+	--surface-tertiary: hsl(var(--theme-h), 30%, 20%);*/
+
+	/* borders */
+	--border-color-fade: hsl(var(--theme-h), 0%, 14%);
+	--border-color: hsl(var(--theme-h), var(--theme-s), calc(var(--bgr-l) + 8%));
+	--border-color-strong: hsl(var(--theme-h), 0%, 45%);
+
+	--border-radius: 0.5rem;
+
+	/* shadows */
+	--shadow: rgba(0, 0, 0, 0.3);
+
+	/* text colors */
+	--text-color-fade-more: hsl(var(--theme-h), var(--theme-s), 30%);
+	--text-color-fade: hsl(var(--theme-h), 19%, 45%);
+	--text-color: hsl(var(--theme-h), 19%, 72%);
+	--text-color-strong: hsl(212, 29%, 92%);
+
+	/* accent colors */
+	--primary-h: 35;
+	--clr-1: hsl(var(--primary-h), 100%, 60%);
+	--clr-1-strong: hsl(calc(var(--primary-h) - 14), 100%, 55%);
+	--clr-2: hsl(35, 100%, 50%);
+}
+
+/* Colors */
+html {
+	background-color: var(--bgr);
+	accent-color: var(--clr-1);
+	caret-color: var(--clr-1);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--text-color-strong);
+}
+
+body {
+	background-color: var(--bgr);
+	color: var(--text-color);
+	font-weight: 400;
+}
+
+p strong {
+	color: var(--text-color-strong);
+}
+
+[data-theme='dark'] main {
+	background: linear-gradient(120deg, var(--bgr), hsl(var(--bgr-h), var(--bgr-s), calc(var(--bgr-l) - 3%)));
+}
+
+/*
+* Buttons & inputs
+*/
+.pbtn,
+.sbtn {
+	border-radius: var(--border-radius);
+}
+
+.pbtn {
+	position: relative;
+	z-index: 1;
+	background: linear-gradient(120deg, var(--clr-1) 40%, var(--clr-1-strong));
+	transition: background 0.5s;
+}
+
+.pbtn::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	opacity: 0;
+	background: var(--clr-1-strong);
+	border-radius: inherit;
+	transition: opacity 0.2s;
+}
+
+.pbtn:hover::before {
+	opacity: 1;
+}
+
+input,
+select,
+textarea {
+	--inp-accent: hsl(var(--primary-h), 40%, 40%);
+}
+
+.inp,
+.sel,
+.textarea {
+	--inp-bgr: var(--surface-very-strong);
+}
+
+.form-lbl {
+	font-weight: 400;
+	color: var(--text-color);
+}

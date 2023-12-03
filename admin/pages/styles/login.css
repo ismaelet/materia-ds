@@ -1,0 +1,32 @@
+/*
+* Layout
+*/
+main {
+	display: grid;
+	place-items: center;
+}
+
+.form {
+	width: 100%;
+	max-width: 600px;
+	padding-inline: 2rem;
+}
+
+.form-title {
+	font-size: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: .3em;
+}
+
+.form .inp {
+	border-radius: var(--border-radius);
+	line-height: 3.5;
+}
+
+.form .pbtn {
+	width: 100%;
+	line-height: 4;
+	font-size: .9rem;
+	font-weight: 600;
+}

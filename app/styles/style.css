@@ -1,0 +1,94 @@
+:root {
+	--wrap-width: 1200px;
+}
+main {
+	overflow: hidden;
+}
+
+/* Structure */
+html,
+body,
+main {
+	background-color: #202020;
+}
+
+/* Texts */
+h1,
+h2,
+h3,
+h4 {
+	color: #eee;
+	letter-spacing: 0.05em;
+}
+
+p {
+	color: var(--c3);
+}
+
+/* Inputs */
+input:checked + .cbx-icon,
+.cbx-icon:hover {
+	outline: 1px solid #eee;
+}
+
+.inp.ok,
+.inp.err {
+	background-color: transparent;
+	outline: none;
+}
+
+.inp.ok {
+	border-color: #11903f;
+}
+.inp.err {
+	border: 1px solid red;
+}
+
+/* Buttons */
+.mbtn {
+	border-radius: 3rem;
+	width: auto;
+	padding: 0 3rem;
+	color: #fff;
+	font-family: var(--font-main);
+	font-weight: 600;
+	line-height: 58px;
+}
+
+.sbtn {
+	border-color: #2e2e2e;
+	color: #eee;
+	width: auto;
+	padding: 0 2rem;
+	font-family: var(--font-main);
+	letter-spacing: 0.2em;
+	line-height: 57px;
+	box-sizing: border-box;
+}
+
+/* Lightboxes */
+.lbox {
+	background: rgba(0, 0, 0, 0.9);
+}
+
+/*
+* Video buttons
+*/
+.video-play {
+	position: relative;
+	display: flex;
+	width: min(50%, 5rem);
+	aspect-ratio: 1;
+	border: 2px solid #eee;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.video-play svg {
+	position: relative;
+	left: 3%;
+	width: 60%;
+	height: 60%;
+	margin: auto;
+	fill: var(--c1);
+}

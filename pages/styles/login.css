@@ -1,0 +1,42 @@
+/* Form */
+.form {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.form-title {
+	color: #eee;
+	border: none;
+	font-size: 3.5rem;
+	letter-spacing: 1rem;
+	margin-right: -1rem;
+	text-transform: uppercase;
+}
+
+.form-foot {border: none;}
+
+/* Inputs */
+.inp {
+	background-color: #fff;
+	line-height: 3.7;
+}
+
+.redir {
+	margin: 1rem 0;
+	color: rgba(200,242,255,.6);
+}
+
+.cbx-icon {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+input:checked + .cbx-icon {border-color: #eee;}
+
+.cbx-icon-dot {border-radius: 3px;}
+
+/* Responsive */
+@media (max-width: 1024px) {
+	#bgr {display: block;}
+}

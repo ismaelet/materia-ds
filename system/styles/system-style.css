@@ -1,0 +1,36 @@
+/*
+* Admin functions
+*/
+:has(> .admin-replace-img) {
+	overflow: hidden;
+	position: relative;
+}
+
+.admin-replace-img {
+	display: flex;
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: opacity 0.3s;
+}
+
+:has(> .admin-replace-img):hover .admin-replace-img {
+	opacity: 1;
+}
+
+.admin-replace-img_icon {
+	width: clamp(2rem, 10%, 4rem);
+	aspect-ratio: 1;
+	margin: auto;
+	translate: 0 2rem;
+	transition: translate 0.3s;
+}
+
+:has(> .admin-replace-img):hover .admin-replace-img_icon {
+	translate: 0;
+}
+
+.admin-replace-img svg {
+	fill: #fff;
+}

@@ -1,0 +1,22 @@
+footer {
+	background-color: #202020;
+}
+
+/* Contacts */
+.f-contact {
+	opacity: .9;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+/* Link */
+.f-link {
+	font-size: .625rem;
+	letter-spacing: .3em;
+	text-transform: uppercase;
+	transition: color .2s;
+}
+
+.f-link:hover {
+	color: var(--c1);
+}

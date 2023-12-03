@@ -1,0 +1,119 @@
+/* Structure */
+.main-wrap {
+	max-width: 1400px;
+}
+
+/* Navigator */
+.navigation {
+	font-size: .7rem;
+}
+
+.navigation a {
+	transition: color .3s;
+}
+
+.navigation .divider {
+	font-size: .8em;
+	top: -1px;
+	margin: 0 .8rem;
+}
+
+/* Image */
+#image {
+	cursor: zoom-in;
+}
+
+/* More images */
+#more .images {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+	grid-gap: 5px;
+}
+
+#more .image {
+	aspect-ratio: 5 / 3;
+	overflow: hidden;
+}
+
+#more .image > * {
+	grid-column-start: 1;
+	grid-row-start: 1;
+	position: relative;
+}
+
+#more .image img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	transition: transform .4s;
+}
+
+@supports not (aspect-ratio: 1 / 1) {
+	#more .image img {
+		height: 15rem;
+	}
+}
+
+#more .image:hover img {
+	transform: scale(1.1);
+}
+
+#more .overlay {
+	opacity: 0;
+	background-color: #000;
+	height: 100%;
+	transition: opacity .2s;
+}
+
+#more .image:hover .overlay {
+	opacity: .7;
+}
+
+.image .zoom-icon {
+	opacity: 0;
+	background-color: rgba(255, 255, 255, .2);
+	padding: 1.5rem;
+	transform: translateY(-1rem);
+	transition: opacity .2s, transform .2s;
+}
+
+#more .image:hover .zoom-icon {
+	opacity: 1;
+	transform: none;
+}
+
+.zoom-icon .icon-box {
+	width: 1.5rem;
+	height: 1.5rem;
+	transition: background-color .3s;
+}
+
+/* Viewer */
+#viewer {
+	background-color: #101010;
+	width: 100%;
+	height: 35rem;
+	margin-top: 1rem;
+}
+
+#viewer-box .overlay {
+	background-color: rgba(0, 0, 0, .8);
+}
+
+#viewer-box .icon {
+	width: 2rem;
+	height: 2rem;
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+
+	#desc {
+		font-size: 1rem;
+	}
+
+}
