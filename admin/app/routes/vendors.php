@@ -8,10 +8,12 @@ Route::add('/instagram-auth', function () {
 
 	$code = $_GET['code'] ?? false;
 
+	$clientId = getenv('INSTAGRAM_CLIENT_ID');
+
 	//request code function
 	function request_code($redirectUri) {
 
-		header('Location: https://www.instagram.com/oauth/authorize/?client_id=1368739646965253&client_secret=REDACTED_INSTAGRAM_SECRET&redirect_uri=' . $redirectUri . '&response_type=code&scope=user_profile');
+		header('Location: https://www.instagram.com/oauth/authorize/?client_id=' . getenv('INSTAGRAM_CLIENT_ID') . '&client_secret=' . getenv('INSTAGRAM_CLIENT_SECRET') . '&redirect_uri=' . $redirectUri . '&response_type=code&scope=user_profile');
 	}
 
 	//exchange code
@@ -25,8 +27,8 @@ Route::add('/instagram-auth', function () {
 			$ch,
 			CURLOPT_POSTFIELDS,
 			http_build_query([
-				'client_id' => '1368739646965253',
-				'client_secret' => 'REDACTED_INSTAGRAM_SECRET',
+				'client_id' => getenv('INSTAGRAM_CLIENT_ID'),
+				'client_secret' => getenv('INSTAGRAM_CLIENT_SECRET'),
 				'code' => $code,
 				'grant_type' => 'authorization_code',
 				'redirect_uri' => $redirectUri,

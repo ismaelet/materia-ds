@@ -5,9 +5,9 @@ global $sysData;
 $sysData = array(
 
 	//E-mail
-	'mail-host' => 'smtps.aruba.it',
-	'mail-username' => 'postmaster@materiads.it',
-	'mail-passsword' => 'REDACTED_DB_PASSWORD',
+	'mail-host' => getenv('MAIL_HOST'),
+	'mail-username' => getenv('MAIL_USERNAME'),
+	'mail-passsword' => getenv('MAIL_PASSWORD'),
 
 	'static' => false,
 
@@ -82,8 +82,8 @@ if (in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1'])) {
 } else {
 
 	//database
-	$sysData['hostname'] = '89.46.111.176';
-	$sysData['database'] = 'Sql1570672_1';
-	$sysData['username'] = 'Sql1570672';
-	$sysData['password'] = 'REDACTED_DB_PASSWORD';
+	$sysData['hostname'] = getenv('DB_HOST');
+	$sysData['database'] = getenv('DB_NAME');
+	$sysData['username'] = getenv('DB_USER');
+	$sysData['password'] = getenv('DB_PASSWORD');
 }
